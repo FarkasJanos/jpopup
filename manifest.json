@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "popup.js": {
+      "files": [
+        "/html5data.js",
+        "/popup.js"
+      ],
+      "main": true
+    },
+    "popup.css": {
+      "files": [
+        "/popup.scss"
+      ],
+      "main": true
+    }
+  },
+  "config": {
+  },
+  "paths": {
+    "source": "assets",
+    "dist": "dist"
+  }
+}
