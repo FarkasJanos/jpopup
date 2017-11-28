@@ -19,7 +19,8 @@ var gulp = require('gulp'),
     concat = require('gulp-concat'),
     uglify = require('gulp-uglify'),
     runSequence = require('run-sequence'),
-    gutil = require('gulp-util');
+    gutil = require('gulp-util'),
+    rename = require('gulp-rename');
 
 cli = minimist(process.argv.slice(2));
 
@@ -116,6 +117,11 @@ const $css_options = {
                     )
                 );
             })
+            .pipe(function () {
+                return gulpIf(cli.production,
+                    rename({suffix: '.min'})
+                );
+            })
             .pipe(postcss, [
                 postcssReporter($css_options.reporter)
             ])
@@ -199,6 +205,11 @@ const jsTasks = function (filename) {
         .pipe(function () {
             return gulpIf(cli.production,
                 uglify()
+            );
+        })
+        .pipe(function () {
+            return gulpIf(cli.production,
+                rename({suffix: '.min'})
             );
         })
         .pipe(function () {

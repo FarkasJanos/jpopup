@@ -1,15 +1,14 @@
 {
   "dependencies": {
-    "popup.js": {
+    "jpopup.js": {
       "files": [
-        "/html5data.js",
-        "/popup.js"
+        "/jpopup.js"
       ],
       "main": true
     },
-    "popup.css": {
+    "jpopup.css": {
       "files": [
-        "/popup.scss"
+        "/jpopup.scss"
       ],
       "main": true
     }

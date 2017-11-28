@@ -1,5 +1,3 @@
-// TODO: add confirm functionality
-// TODO: add reachedview, leftview functionality
 (function ($) {
     $.JPopup = function (options) {
         var defaults = {
@@ -219,21 +217,3 @@
     });
 
 })(jQuery);
-
-(function (window, document, $) {
-    $(function () {
-        $.JPopup({
-            // verbose: true,
-            // hidden: false,
-            content: 'Popup triggered by JavaScript'
-            // closeButton: '<i class="sdfdf"></i>',
-            // closeButtonPosition: 'left bottom',
-            // textCenter: true,
-            // maxWidth: true,
-            // delay: '3s',
-            // inView: true,
-            // noiseTime: 3000,
-        });
-    });
-
-})(window, document, jQuery);
