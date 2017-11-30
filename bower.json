@@ -16,7 +16,8 @@
     "jquery": ">=1.7.0"
   },
   "dependencies": {
-    "jquery-html5data": "https://github.com/markdalgleish/jquery-html5data.git"
+    "jquery-html5data": "https://github.com/markdalgleish/jquery-html5data.git",
+    "jquery.cookie": "jquery-cookie#^1.4.1"
   },
   "overrides": {
     "jquery-html5data": {
