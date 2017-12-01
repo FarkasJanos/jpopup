@@ -31,11 +31,11 @@
                 debug('No content specified. Exiting...');
                 return null;
             }
-            checkCookie();
-            if (plugin.cookie.enabled && plugin.cookie.stored) {
-                debug('Cookie already exist. Exiting...');
-                return null;
-            }
+            // checkCookie();
+            // if (plugin.cookie.enabled && plugin.cookie.stored) {
+            //     debug('Cookie already exist. Exiting...');
+            //     return null;
+            // }
             createPopup();
             setupPopup();
         };
@@ -52,45 +52,45 @@
                     }
                 }
             },
-            checkCookie = function () {
-                if (plugin.settings.cookie === false) {
-                    debug('Cookie support disabled');
-                    return;
-                }
-                if (plugin.settings.cookieName !== '') {
-                    debug('Cookie support enabled');
-                    plugin.cookie.enabled = true;
-                    if ($.cookie(plugin.settings.cookieName) === 'undefined') {
-                        plugin.cookie.stored = false;
-                        debug('Cookie doesn\'t exists');
-                    } else {
-                        plugin.cookie.stored = true;
-                        debug('Cookie exists');
-                    }
-                } else {
-                    debug('Cookie support enabled, \'cookieName\' must be specified.');
-                }
-            },
-            storeCookie = function () {
-                if (!plugin.cookie.enabled) {
-                    return;
-                }
-                if (plugin.settings.cookieSession) {
-                    $.cookie(plugin.settings.cookieName, true);
-                    debug('Cookie saved as session cookie');
-                } else {
-                    var data = {};
-                    var expires = parseInt(plugin.settings.cookieExpires, 10);
-                    if (expires >= 0) {
-                        data.expires = expires;
-                    }
-                    if (plugin.settings.cookiePath !== null) {
-                        data.path = plugin.settings.cookiePath;
-                    }
-                    $.cookie(plugin.settings.cookieName, true, data);
-                    debug('Cookie saved', data);
-                }
-            },
+            // checkCookie = function () {
+            //     if (plugin.settings.cookie === false) {
+            //         debug('Cookie support disabled');
+            //         return;
+            //     }
+            //     if (plugin.settings.cookieName !== '') {
+            //         debug('Cookie support enabled');
+            //         plugin.cookie.enabled = true;
+            //         if ($.cookie(plugin.settings.cookieName) === 'undefined') {
+            //             plugin.cookie.stored = false;
+            //             debug('Cookie doesn\'t exists');
+            //         } else {
+            //             plugin.cookie.stored = true;
+            //             debug('Cookie exists');
+            //         }
+            //     } else {
+            //         debug('Cookie support enabled, \'cookieName\' must be specified.');
+            //     }
+            // },
+            // storeCookie = function () {
+            //     if (!plugin.cookie.enabled) {
+            //         return;
+            //     }
+            //     if (plugin.settings.cookieSession) {
+            //         $.cookie(plugin.settings.cookieName, true);
+            //         debug('Cookie saved as session cookie');
+            //     } else {
+            //         var data = {};
+            //         var expires = parseInt(plugin.settings.cookieExpires, 10);
+            //         if (expires >= 0) {
+            //             data.expires = expires;
+            //         }
+            //         if (plugin.settings.cookiePath !== null) {
+            //             data.path = plugin.settings.cookiePath;
+            //         }
+            //         $.cookie(plugin.settings.cookieName, true, data);
+            //         debug('Cookie saved', data);
+            //     }
+            // },
             isDomElement = function () {
                 return (options.length === 1 && options[0].dataset);
             },
@@ -150,13 +150,13 @@
                     if (delay) {
                         setTimeout(function () {
                             plugin.dom.popup.removeClass('module--hidden');
-                            storeCookie();
+                            // storeCookie();
                         }, delay);
 
                         debug('Displaying popup in: ' + delay + 'ms');
                     } else {
                         plugin.dom.popup.removeClass('module--hidden');
-                        storeCookie();
+                        // storeCookie();
                         debug('Displaying popup...');
                     }
                 }
